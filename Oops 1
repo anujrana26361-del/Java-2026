@@ -1,0 +1,27 @@
+abstract class Payment {
+
+    abstract void pay(int amount);
+
+    void receipt() {
+        System.out.println("Receipt generated");
+    }
+}
+
+class UPI extends Payment {
+
+    @Override
+    void pay(int amount) {
+        System.out.println("Paid ₹" + amount + " using UPI");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        UPI u = new UPI();
+
+        u.pay(500);
+        u.receipt();
+    }
+}
